@@ -157,6 +157,11 @@ app.post("/login", (req, res) => {
   });
 });
 
+// Add a route handler for the root URL
+app.get("/", (req, res) => {
+res.send("Welcome to the backend server!");
+});
+
 // connect to server
 app.listen(8080, () => {
   console.log("server is running");
