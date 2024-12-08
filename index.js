@@ -26,7 +26,6 @@ app.use(express.json()); // convert user details to json format
    "mongodb+srv://employee:svYx4bH6zOd6sxzB@cluster0.51fq2.mongodb.net/employee?retryWrites=true&w=majority&appName=Cluster0"
 );
 
-
 // const { MongoClient, ServerApiVersion } = require('mongodb');
 // const uri = "mongodb+srv://employee:5FYyh3R43NSuKG2I@cluster0.51fq2.mongodb.net/employee/?retryWrites=true&w=majority&appName=Cluster0";
 
