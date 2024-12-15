@@ -6,6 +6,7 @@ const path = require("path");
 const StaffsModel = require("./models/staffs");
 const ImageModel = require("./models/image");
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv').config();
 
 const app = express();
 app.use(express.json()); // convert user details to json format
@@ -21,9 +22,9 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-mongoose.connect(
-  "mongodb+srv://employee:svYx4bH6zOd6sxzB@cluster0.51fq2.mongodb.net/employee?retryWrites=true&w=majority&appName=Cluster0"
-);
+// mongoose.connect(
+//   "mongodb+srv://employee:svYx4bH6zOd6sxzB@cluster0.51fq2.mongodb.net/employee?retryWrites=true&w=majority&appName=Cluster0"
+// );
 
 // Uploading images in backend or server
 const store = multer.diskStorage({
@@ -148,6 +149,11 @@ app.get("/", (req, res) => {
 
 
 // connect to server
-app.listen(8080, () => {
-  console.log("Server is running on port 8080");
+const PORT = process.env.PORT || 8080;
+const DATABASE_URL = process.env.DATABASE_URL;
+
+console.log('Database URL:', DATABASE_URL);
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
