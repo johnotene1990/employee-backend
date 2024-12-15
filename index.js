@@ -6,7 +6,6 @@ const path = require("path");
 const StaffsModel = require("./models/staffs");
 const ImageModel = require("./models/image");
 const bodyParser = require('body-parser');
-require('dotenv').config();
 
 const app = express();
 app.use(express.json()); // convert user details to json format
@@ -149,11 +148,7 @@ app.get("/", (req, res) => {
 
 
 // connect to server
-const PORT = process.env.PORT || 8080;
-const DATABASE_URL = process.env.DATABASE_URL;
 
-console.log('Database URL:', DATABASE_URL);
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(8080, () => {
+  console.log("Server is running on port 8080");
 });
