@@ -64,7 +64,7 @@ app.post("/register", (req, res) => {
 
 
 // Get all user details
-app.get("https://employee-frontend-x7wh.onrender.com/home", (req, res) => {
+app.get("/home", (req, res) => {
   StaffsModel.find({})
     .then((staffs) => res.json(staffs))
     .catch((err) => res.json(err));
